@@ -1,10 +1,19 @@
 import styles from '../styles.module.css'
 import Link from 'next/link'
+import { useRouter } from 'next/router';
+import { useEffect } from "react"
 
 const Code = (p) => <code className={styles.inlineCode} {...p} />
 
-const Index = () => (
-  <div className={styles.container}>
+const Index = () => {
+  const router = useRouter()
+  useEffect(() => {
+    return () => {
+      if(router.pathname === "/") router.replace(`/g/5`)
+    }
+  }, [router]);
+
+  return (<div className={styles.container}>
     <div className={styles.card}>
       <h1>Rewrites with Next.js</h1>
       <hr className={styles.hr} />
@@ -48,7 +57,7 @@ const Index = () => (
       </p>
       <hr className={styles.hr} />
     </div>
-  </div>
-)
+  </div>)
+}
 
 export default Index
