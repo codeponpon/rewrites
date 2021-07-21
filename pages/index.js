@@ -7,7 +7,7 @@ const Index = () => {
   const router = useRouter()
   useEffect(() => {
     return () => {
-      if(router.pathname === "/") router.replace(`/g/5`)
+      if(router.pathname === "/") router.replace(`/g/${process.env.GAME_ID}`)
     }
   }, [router]);
 

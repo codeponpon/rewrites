@@ -1,22 +1,28 @@
+const { APP_URL, GAME_ID } = process.env
+
 module.exports = {
+  env: {
+    APP_URL: APP_URL,
+    GAME_ID: GAME_ID
+  },
   async rewrites() {
     return [
       {
         source: '/g/:path*',
-        destination: `https://nextetor.vercel.app/office/game/:path*`,
+        destination: `${APP_URL}/office/game/:path*`,
       },
       {
         source: '/api/graphql',
-        destination: `https://nextetor.vercel.app/office/api/graphql`,
+        destination: `${APP_URL}/office/api/graphql`,
       },
       {
         source: '/office',
-        destination: `https://nextetor.vercel.app/office`,
+        destination: `${APP_URL}/office`,
       },
       {
         source: '/office/:path*',
-        destination: `https://nextetor.vercel.app/office/:path*`,
+        destination: `${APP_URL}/office/:path*`,
       },
     ]
-  },
+  }
 }
