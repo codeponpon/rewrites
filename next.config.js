@@ -21,8 +21,8 @@ module.exports = {
       },
       // Rewriting to an external URL
       {
-        source: '/g/:slug',
-        destination: 'https://nextetor.vercel.app/office/games/:slug',
+        source: '/g/:id',
+        destination: 'https://nextetor.vercel.app/office/games/:id',
       },
     ]
   },

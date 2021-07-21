@@ -38,7 +38,7 @@ const Index = () => (
             </Link>
           </li>
           <li>
-            <a href="/docs/page">Visit External URL</a>
+            <a href="/g/5">Visit External URL</a>
           </li>
         </ul>
       </nav>
